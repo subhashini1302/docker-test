@@ -1,9 +1,7 @@
-FROM openjdk:21
+FROM eclipse-temurin:21-jre
 
-COPY target/demo-app.jar  /usr/app/
-
-WORKDIR /usr/app/
+COPY target/demo-app.jar app.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "demo-app.jar"]
+ENTRYPOINT ["java","-jar","/app.jar"]
